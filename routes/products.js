@@ -4,32 +4,28 @@ const router = express.Router();
 const products = 'products';
 
 module.exports = function (db) {
-  // GET PRODUCTS
-  router.get(`/${products}`, (req, res) => {
-    res.send(db.get(products).value());
-  });
+  router
+    .route(`/${products}`)
+    .get((req, res) => {
+      res.send(db.get(products).value());
+    })
+    .post((req, res) => {
+      const newProduct = req.body;
+      res.send(db.get(products).insert(newProduct).write());
+    });
 
-  // POST A PRODUCT
-  router.post(`/${products}`, (req, res) => {
-    const newProduct = req.body;
-    res.send(db.get(products).insert(newProduct).write());
-  });
-
-  // UPDATE A PRODUCT
-  router.patch(`/${products}/:id`, (req, res) => {
-    res.send(db.get(products).find({ id: req.params.id }).assign(req.body)).write();
-  });
-
-  // GET A PRODUCT
-  router.get(`/${products}/:id`, (req, res) => {
-    res.send(db.get(products).find({ id: req.params.id })).value();
-  });
-
-  // DELETE A PRODUCT
-  router.delete(`/${products}/:id`, (req, res) => {
-    db.get(products).remove({ id: req.params.id }).write();
-    res.status(204).send();
-  });
+  router
+    .route(`/${products}/:id`)
+    .get((req, res) => {
+      res.send(db.get(products).find({ id: req.params.id })).value();
+    })
+    .patch((req, res) => {
+      res.send(db.get(products).find({ id: req.params.id }).assign(req.body).write());
+    })
+    .delete((req, res) => {
+      db.get(products).remove({ id: req.params.id }).write();
+      res.status(204).send();
+    });
 
   return router;
 };
