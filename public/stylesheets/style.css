@@ -1,5 +1,5 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
   color: #223640;
@@ -81,6 +81,7 @@ h1 {
 }
 #results > ul {
   list-style: none;
+  width: 100%;
 }
 
 #results > ul > li {
@@ -88,6 +89,12 @@ h1 {
   width: 50%;
   justify-content: space-between;
   align-items: center;
+}
+
+li {
+  gap: 0;
+  display: flex;
+  justify-content: flex-start;
 }
 
 li > .id {

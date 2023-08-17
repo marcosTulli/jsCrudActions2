@@ -7,6 +7,30 @@
       "color": "orange",
       "id": "0124081a-4daa-425a-bb40-d5c016893fe3",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue. Risus quis varius quam quisque. Quis risus sed vulputate odio. Ultrices eros in cursus turpis. Est velit egestas dui id ornare arcu. Sem fringilla ut morbi tincidunt augue interdum velit euismod. Dictumst quisque sagittis purus sit amet volutpat. Sed libero enim sed faucibus turpis in eu. Dui vivamus arcu felis bibendum ut tristique et egestas."
+    },
+    {
+      "name": "HIking Boots",
+      "price": "39.99",
+      "quantity": "3",
+      "description": "TUKI TUKI TUKI",
+      "color": "Red",
+      "id": "a01f00d9-e974-444d-b570-e4c105824404"
+    },
+    {
+      "name": "TEST",
+      "price": "123",
+      "quantity": "123",
+      "description": "TUKI",
+      "color": "red",
+      "id": "23d8fe9d-9b8e-4e80-be53-29c1a5d4343e"
+    },
+    {
+      "name": "TUKITEST",
+      "price": "22222",
+      "quantity": "22",
+      "description": "POPOPO",
+      "color": "green",
+      "id": "6baa22d9-025f-4cc0-8020-385998ba489a"
     }
   ]
 }
