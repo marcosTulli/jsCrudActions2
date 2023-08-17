@@ -17,7 +17,12 @@ module.exports = function (db) {
   router
     .route(`/${products}/:id`)
     .get((req, res) => {
-      res.send(db.get(products).find({ id: req.params.id })).value();
+      const result = db.get(products).find({ id: req.params.id }).value();
+      if (result) {
+        res.send(result);
+      } else {
+        res.status(404).send();
+      }
     })
     .patch((req, res) => {
       res.send(db.get(products).find({ id: req.params.id }).assign(req.body).write());
