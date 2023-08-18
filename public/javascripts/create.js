@@ -9,8 +9,19 @@ document.getElementById('submit').onclick = function (event) {
       description: formData.get('description'),
       color: formData.get('color'),
     })
-    .then(processResults);
+    .then(processResults)
+    .catch(handleErrors);
 };
+
+function handleErrors({ response }) {
+  // TODO CLEAR ERRORS
+  const errors = response.data;
+  errors.forEach((i) => {
+    const { field, message } = i;
+    const element = document.getElementsByName(field)[0].nextElementSibling;
+    element.textContent = message;
+  });
+}
 
 function processResults({ data }) {
   document.querySelector('form').reset();
